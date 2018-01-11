@@ -1,17 +1,3 @@
-# CSRF
-使用AB cookie防御CSRF攻击. Use two cookies (AB cookies) to defend against CSRF attacks.
-
-# 使用方法
-1.全网站加载js文件(可以在公共头尾文件里加载)
-如:
-```html
-<script type="text/javascript" src="/static/admin/js/jquery.min.js"></script>
-<script type="text/javascript" src="/static/admin/js/jquery.cookie.js"></script>
-<script type="text/javascript" src="/static/admin/js/CSRF.js"></script>
-```
-
-2.在入口文件增加CSRF处理. 见example.php
-```php
 <?php
 /**
  * 使用例子
@@ -74,4 +60,7 @@ class Controller{
 }
 
 
-```
+
+
+
+
