@@ -1,6 +1,17 @@
 # CSRF
 使用AB cookie防御CSRF攻击. Use two cookies (AB cookies) to defend against CSRF attacks.
 
+CSRF有两个基本特点:
+1. 不能读写页面内容
+2.  不能读写页面cookie.
+
+本防御方法, 只利用了特点2, 让所有合法请求都向服务器证明自己可以读写cookie, 从而和CSRF请求区分开来.
+每次请求前, js读取A cookie的值, 写入到B cookie里. 服务器收到请求时检查AB cookie的值是否相等来
+判断此请求来源能否读写cookie, 并不断的变化A cookie的值.
+
+不过, 从安全角度考虑, 为了避免有其它漏洞被攻击者篡改A cookie, 所有把A cookie的值同时存一份到session,
+比较时已session里的值为准.
+
 # 使用方法
 1.全网站加载js文件(可以在公共头尾文件里加载)
 如:
@@ -28,7 +39,7 @@ class Controller{
         //检查登录
         //$this->checkLogin();
 
-        //csrf处理. 
+        //csrf处理. (调用前须确保已经session_start()了)
         $this->dealCsrf();
         
         //... 其它处理 ...

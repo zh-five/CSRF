@@ -14,7 +14,7 @@ class Controller{
         //检查登录
         //$this->checkLogin();
 
-        //csrf处理. 
+        //csrf处理. (调用前须确保已经session_start()了)
         $this->dealCsrf();
         
         //... 其它处理 ...
