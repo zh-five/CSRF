@@ -12,6 +12,16 @@ CSRF有两个基本特点:
 不过, 从安全角度考虑, 为了避免有其它漏洞被攻击者篡改A cookie, 所有把A cookie的值同时存一份到session,
 比较时已session里的值为准.
 
+#安装
+```bash
+#1.composer
+composer require zh-five/csrf
+
+#2.git clone
+git clone git@github.com:zh-five/CSRF.git
+```
+
+
 # 使用方法
 1.全网站加载js文件(可以在公共头尾文件里加载)
 如:
