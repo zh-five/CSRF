@@ -1,0 +1,18 @@
+{
+    "name": "zh-five/csrf",
+    "description": "使用AB cookie防御CSRF攻击. Use two cookies (AB cookies) to defend against CSRF attacks.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Five",
+            "email": "five@v5ip.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Five\\CSRF\\": "src/"
+        }
+    },
+    "require": {}
+}
